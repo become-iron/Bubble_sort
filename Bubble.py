@@ -1,17 +1,27 @@
-from random import sample #импорт функции функции для генерации рандомного числа
-min = 0 #минимальное значение числа
-max = 9 
-values = []
-amount = 5
-values = sample(range(max), amount)
-##for i in range(amount):
-##    values+=[randint(min,max)]
-    
-print('Исходная последовательность: ', values)
+# coding=utf-8
+# сортировка пузырьком
+values = []  # список для хранения значений
+while True:
+    try:  # исключение
+        # ввод количества принимаемых значений
+        amount = int(input('\nВведите количество: '))
 
-for j in range(amount-1):
-    for i in range(amount-1):
-        if values[i] > values[i+1]:
-            values[i], values[i+1] = values[i+1], values[i]
+        # ввод значений
+        for i in range(amount):
+            print('Введите', i + 1, 'значение: ')
+            values += [input()]
 
-print('Конечная последовательность: ', values)
+        print('Исходная последовательность: ', values)
+
+        # сортировка
+        for j in range(amount - 1):
+            for i in range(amount - 1):
+                if values[i] > values[i + 1]:
+                    values[i], values[i + 1] = values[i + 1], values[i]
+
+        print('Конечная последовательность: ', values)
+
+    # сообщение об ошибке при попытке ввести не число
+    # в графе количества принимаемых значений
+    except ValueError:
+        print('Введите число')
