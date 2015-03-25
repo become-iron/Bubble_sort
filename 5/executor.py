@@ -31,7 +31,7 @@ for i in range(1, len(text)):
         text[i] = symbol1 + symbol3 + text[i][1:]
     else:
         text[i] = symbol1 + text[i]
-        
+
 text = ''.join(text)  # перевод списка в строку
-print('\nОТРЕДАКТИРОВАННЫЙ ТЕКСТ:\n{0}'.format(text))  # вывод отрер-го текста
+print('\nОТРЕДАКТИРОВАННЫЙ ТЕКСТ:\n{0}'.format(text))  # вывод отред-го текста
 input('')
